@@ -67,7 +67,7 @@ public class UserCreateTest {
         userAuth.setEmail(null);
         creationUserFailedField();
     }
-    public void creationUserFailedField() {
+    private void creationUserFailedField() {
         Response response = createUser(userAuth);
         respUser = response.body().as(UserRegister.class);
         assertEquals("Неверный код ответа", 403, response.statusCode());

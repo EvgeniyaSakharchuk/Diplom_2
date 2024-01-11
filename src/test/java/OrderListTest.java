@@ -29,7 +29,7 @@ public class OrderListTest {
     public void getUserOrdersUsersWithoutOrders() {
         Response response = RequestOrder.getUserOrders(userRegister.getAccessToken());
         OrderClient orderResponse = response.as(OrderClient.class);
-        assertTrue("200 ОК", response.getStatusCode() == 200);
+        assertEquals("200 ОК",200, response.getStatusCode());
         assertNotNull("Получен список заказов", orderResponse.getOrders());
     }
 
